@@ -535,12 +535,11 @@
     se a música não tocar, tente outro vídeo/link.
     ======================================================================
   -->
-  <div id="yt-player" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none;"></div>
-  <button id="musicToggle" class="music-btn" aria-label="Ligar ou pausar a música"></button>
-</div>
+<audio id="bgMusic" loop>
+    <source src="ssstik.io_1784739881474.mp3" type="audio/mpeg">
+</audio>
 
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
+<button id="musicToggle" class="music-btn" aria-label="Ligar ou pausar a música"></button>
   /* ---------- ENVELOPE OPEN ---------- */
   const envFrame = document.getElementById('envFrame');
   const envHotspot = document.getElementById('envHotspot');
@@ -594,39 +593,28 @@
   });
 
   /* ---------- BACKGROUND MUSIC (YouTube, escondido) ---------- */
-  const YT_VIDEO_ID = 'tmlGA_zFtpQ'; // <-- cole aqui o ID do vídeo do YouTube
-  const musicToggle = document.getElementById('musicToggle');
-  let ytPlayer = null;
-  let ytReady = false;
-  let musicStarted = false;
+/* ---------- BACKGROUND MUSIC (MP3) ---------- */
+const music = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
 
-  window.onYouTubeIframeAPIReady = function(){
-    ytPlayer = new YT.Player('yt-player', {
-      height:'1', width:'1',
-      videoId: YT_VIDEO_ID,
-      playerVars:{
-        autoplay:0, controls:0, disablekb:1, fs:0,
-        loop:1, playlist: YT_VIDEO_ID
-      },
-      events:{
-        onReady: ()=>{ ytReady = true; ytPlayer.setVolume(55); if(musicStarted) ytPlayer.playVideo(); }
-      }
-    });
-  };
+function startMusic(){
+    music.play().catch(() => {});
+}
 
-  function startMusic(){
-    if(musicStarted) return;
-    musicStarted = true;
-    if(ytReady) ytPlayer.playVideo();
-  }
-  musicToggle.addEventListener('click', ()=>{
-    if(!ytReady) return;
-    const state = ytPlayer.getPlayerState();
-    if(state === 1){ ytPlayer.pauseVideo(); musicToggle.classList.add('paused'); }
-    else { ytPlayer.playVideo(); musicToggle.classList.remove('paused'); }
-  });
-  envFrame.addEventListener('click', openEnvelope);
-  envFrame.addEventListener('keypress', e=>{ if(e.key==='Enter'||e.key===' ') openEnvelope(); });
+musicToggle.addEventListener('click', ()=>{
+    if(music.paused){
+        music.play();
+        musicToggle.classList.remove('paused');
+    }else{
+        music.pause();
+        musicToggle.classList.add('paused');
+    }
+});
+
+envFrame.addEventListener('click', openEnvelope);
+envFrame.addEventListener('keypress', e=>{
+    if(e.key==='Enter'||e.key===' ') openEnvelope();
+});
 
   /* ---------- SCROLL REVEAL ---------- */
   const sections = document.querySelectorAll('section');
