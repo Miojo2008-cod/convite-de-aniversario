@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Convite - Agatha 18 anos</title>
+<title>Convite - Deja</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -416,7 +416,7 @@
     <span class="floaty" style="top:8%; left:10%; animation-duration:5.5s;">💿</span>
     <span class="floaty" style="top:12%; right:8%; animation-duration:7s; animation-delay:.6s;">✨</span>
     <span class="floaty" style="bottom:18%; left:14%; animation-duration:6.5s; animation-delay:1.1s;">⭐</span>
-    <div class="env-hint">toque no envelope</div>
+    <div class="env-hint">toque no Nokia</div>
     <a class="env-music" href="https://open.spotify.com/playlist/4xX35tce4XP8g2Hircsv5q?si=P8XXtcFEQui2VGDnMhD5iA&utm_source=instagram-direct-message&pi=BTV2a2Y-R8mWZ" target="_blank" rel="noopener">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.4 14.4a.6.6 0 0 1-.83.2c-2.3-1.4-5.2-1.7-8.6-.9a.6.6 0 1 1-.27-1.17c3.7-.85 6.9-.48 9.5 1.1.29.17.38.55.2.87zm1.2-2.7a.75.75 0 0 1-1.03.25c-2.6-1.6-6.6-2.07-9.7-1.13a.75.75 0 1 1-.44-1.44c3.53-1.07 7.9-.54 10.9 1.3.35.22.47.68.27 1.02zm.1-2.8C14.9 9 8.9 8.8 5.9 9.7a.9.9 0 1 1-.52-1.72c3.5-1.05 10.1-.82 13.6 1.26a.9.9 0 1 1-.92 1.55z"/></svg>
       nossa playlist
@@ -446,7 +446,7 @@
             </a>
             <button class="icon-btn icon-rsvp" id="heroRsvpBtn" title="Confirmar presença">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M12 14.5v2.3M12 19.2h.01"/></svg>
-              <span class="sr-only">Confirmar presença</span>
+              <span class="sr-only">Informações</span>
             </button>
             <a class="icon-btn icon-wpp" href="https://wa.me/5516996094863" target="_blank" rel="noopener" title="Falar no WhatsApp">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1s-.7.8-.8 1c-.2.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5S9.7 8 9.5 7.5c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
@@ -517,7 +517,7 @@
       </a>
       <div class="reveal rsvp-footer">
         Com carinho,
-        <span class="sig glitter-text">Agatha</span>
+        <span class="sig glitter-text">Di</span>
       </div>
     </section>
 
@@ -668,13 +668,13 @@ envFrame.addEventListener('keypress', e=>{
   const rsvpName = document.getElementById('rsvpName');
   const rsvpYes = document.getElementById('rsvpYes');
   const rsvpNo = document.getElementById('rsvpNo');
-  const WHATSAPP_NUMBER = '5516996094863'; // <-- troque pelo número real (DDI+DDD+numero)
+  const WHATSAPP_NUMBER = '5516988577884'; // <-- troque pelo número real (DDI+DDD+numero)
 
   function buildLink(choice){
     const name = rsvpName.value.trim() || 'convidado(a)';
     const msg = choice === 'sim'
-      ? `Oi Agatha! Aqui é ${name}. Confirmo presença na sua festa de 18 anos dia 22/08 às 14h! 🎉💖`
-      : `Oi Agatha! Aqui é ${name}. Infelizmente não vou conseguir ir na sua festa dia 22/08, mas te desejo um dia incrível! 💕`;
+      ? `Oiii Di!!! Eu ${name}. estou confirmada (o)!! Vamos comemorar juntos!!💓🎉 🎉💖`
+      : `Oi Di! Aqui é ${name}. Infelizmente não vou conseguir ir na sua festa dia 22/08, mas te desejo um dia incrível! 💕`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   }
   function refreshLinks(){
